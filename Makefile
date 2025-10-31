@@ -1,7 +1,10 @@
-.PHONY: run clean lint lint-fix format format-fix
+.PHONY: run init-db clean lint lint-fix format format-fix
 
 run:
 	uv run flask --app flaskr run --debug
+
+init-db:
+	uv run flask --app flaskr init-db
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
