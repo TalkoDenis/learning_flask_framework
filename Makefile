@@ -1,4 +1,4 @@
-.PHONY: run init-db clean lint lint-fix format format-fix
+.PHONY: run init-db clean lint lint-fix format format-fix test coverage coverage-report
 
 run:
 	uv run flask --app flaskr run --debug
@@ -21,3 +21,12 @@ format:
 
 format-fix:
 	uv run ruff format .
+
+test:
+	uv run python -m pytest
+
+coverage:
+	uv run coverage run --source=flaskr -m pytest
+
+coverage-report:
+	uv run coverage report

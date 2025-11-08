@@ -11,6 +11,9 @@ dependencies = [
     "ruff>=0.14.3",
 ]
 
-[build-system]
-requires = ["flit_core<4"]
-build-backend = "flit_core.buildapi"
+[tool.pytest.ini_options]
+testpaths = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["."]
